@@ -1,5 +1,4 @@
-   
-    function btnclick(){
+     function btnclick(){
         let quicktxt=document.getElementById("quicktxt").value;
         let arr=quicktxt.split("");
         let show=document.getElementById("show");
@@ -13,7 +12,7 @@
     }
     function hxp(arr){
         /**找到需快排数组中间的数字的下标*/
-        var flag=Math.floor(arr.length/2);
+        var flag=Math.ceil(arr.length/2);
         /**取出数组项为基准*/
         var key=arr.splice(flag,1);
         var left=[];
