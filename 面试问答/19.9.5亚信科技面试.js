@@ -104,3 +104,18 @@
  * 1、post中传参是放在http主体中，
  * 参数隐藏因此更安全，且传输数据量大
 */
+/**
+ * 谈谈cookie、session、localStorage？
+ * ***cookie*** *
+ * 1、cookie数据始终在同源http请求中携带，
+ * 在浏览器和服务器之间来回传递
+ * 2、大小：cookie传输数据很小不超过4KB，
+ * 作用：http请求都会携带cookie，只适合携带小数据如：会话标识
+ * 过期时间：仅在设置的cookie过期时间之前
+ * ***sessionStorage和localStorage*** *
+ * 1、二者一般仅在本地保存
+ * 大小：二者都很大可达5M以上
+ * 过期时间：sessionStorage仅在当前浏览器页面关闭之前有效
+ * 过期时间：localStorage：始终有效，即使浏览器页面/窗口关闭也会一直保存
+ * 作用：用作持久数据的保存
+ */
