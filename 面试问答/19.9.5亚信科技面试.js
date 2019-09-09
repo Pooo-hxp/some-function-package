@@ -119,3 +119,19 @@
  * 过期时间：localStorage：始终有效，即使浏览器页面/窗口关闭也会一直保存
  * 作用：用作持久数据的保存
  */
+/**
+ * 谈谈JavaScript中的原型链和继承？
+ * 这里涉及了很多，我在个人博客中也做了很多笔记，因此这里只大致说下
+ * 首先很激动和感谢JavaScript能通过原型链实现方法的继承复用，
+ * 这大大的减少了重复的代码编写，也让代码更加的整洁规范
+ * 原型链实现继承（其实就是子类继承父类属性和方法）
+ * 实现继承的关键之处在于
+ * Son.prototype = new Father()
+ * var sonObj_2 = new Son()
+ * 这里很好理解通过new Son()生成的实例对象
+ * sonObj_2中的proto指向Son.prototype
+ * 而Son.prototype又指向Father的实例对象
+ * Father的实例对象的proto指向Father.prototype
+ * 因此Son实例化出的对象通过原型链的查找
+ * 都具有构造函数Father身上的属性和方法了
+ */
