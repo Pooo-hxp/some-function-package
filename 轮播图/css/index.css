@@ -1,0 +1,62 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+ul li {
+    list-style: none;
+}
+#box{
+    width: 400px;
+    height: 350px;
+    margin: 100px auto;
+    position: relative;
+}
+#imgs{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#imgs li{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#imgs li:nth-child(odd){
+    background: green;
+}
+#dot{
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+#dot li{
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+#dot li.active{
+    background: #000;
+}
+#pre{
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform:translateY(-50%);
+    left: 0px;
+    background: yellow;
+}
+#next{
+    position: absolute;
+    top:50%;
+    width: 30px;
+    height: 30px;
+    transform:translateY(-50%);
+    right: 0;
+    background: yellow;
+}
