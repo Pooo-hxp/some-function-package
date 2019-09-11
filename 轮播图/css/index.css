@@ -1,35 +1,34 @@
 *{
     padding: 0px;
     margin: 0px;
+    background: rgb(126, 160, 126);
 }
 ul li {
     list-style: none;
 }
 #box{
-    width: 400px;
-    height: 350px;
+    width: 965px;
+    height: 663px;
     margin: 100px auto;
     position: relative;
 }
-#imgs{
+#list{
     position: relative;
     width: 100%;
     height: 100%;
 }
-#imgs li{
+#list li{
     position: absolute;
+    display: none;
     width: 100%;
     height: 100%;
-}
-#imgs li:nth-child(odd){
-    background: green;
 }
 #dot{
     position: absolute;
     left: 50%;
     cursor: pointer;
     transform: translateX(-50%);
-    bottom: 10px;
+    bottom: 9px;
 }
 #dot li{
     float: left;
@@ -42,7 +41,7 @@ ul li {
 #dot li.active{
     background: #000;
 }
-#pre{
+#prev{
     position: absolute;
     top: 50%;
     width: 30px;
