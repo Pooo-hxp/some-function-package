@@ -19,16 +19,16 @@
     /**定义轮播图方法 */
     Carouse.prototype.init=function(){
         var _this=this; //保存this指向
-        // this.odiv.onmouseover=function(){
-        //     /**鼠标移入清除定时器停止轮播 */
-        //     clearInterval(_this.timer2);
-        // }
-        // this.odiv.onmouseout=function(){
-        //     /**鼠标移出则启动轮播 */
-        //     _this.timer2=setInterval(() => {
-        //         _this.move();
-        //     },3000);
-        // };
+        this.odiv.onmouseover=function(){
+            /**鼠标移入清除定时器停止轮播 */
+            clearInterval(_this.timer2);
+        }
+        this.odiv.onmouseout=function(){
+            /**鼠标移出则启动轮播 */
+            _this.timer2=setInterval(() => {
+                _this.move();
+            },3000);
+        };
     }
 
         Carouse.prototype.move=function(){
