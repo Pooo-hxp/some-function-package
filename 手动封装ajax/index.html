@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="FakeAjax.js"></script>
-    <title>Document</title>
+    <script src="ajax.js"></script>
+    <title>测试</title>
 </head>
 <body>
 </body>
 <script>
-    var hxp_ajax=new FakeAjax();
-    hxp_ajax.send({
-        type:'post',
+   // var hxp_ajax=new FakeAjax();
+    hxp_ajax({
+        type:'get',
         url:'http://api.tianapi.com/txapi/poetries/?key=0c7ebab2461621aeb2c34b3a82e4c702',
         data:{
-            word:'杜甫',
+            word:'李白',
             num:5
         },
         success:function(res){
@@ -25,6 +25,5 @@
             }
         }
     })
-
 </script>
 </html>

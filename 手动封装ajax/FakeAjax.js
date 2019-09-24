@@ -4,11 +4,6 @@
  */
 (function (window) {
     function FakeAjax() {
-    };
-    window.FakeAjax = FakeAjax;
-})(window);
-(function (window) {
-    function FakeAjax() {
     }
     FakeAjax.prototype = {
         /**

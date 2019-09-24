@@ -1,7 +1,0 @@
-1、清除浮动
-2、ajax中get与post区别然后手动封装一个
-3、es6的新特性
-4、call和apply的区别
-5、讲讲前端工程化
-6、给String继承一个方法count，使得输出给定字符串中频率出现最高的字符，
-比如字符串abcdndbbbba 输出b

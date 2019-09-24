@@ -1,16 +1,15 @@
-let str='abcdaacbddddd';
-const strChar=str=>{
-    let string=[str],
-    maxValue='',
-    obj={},
-    max=0;
-    string.forEach(value=>{
-        obj[value]=obj[value]==undefined?1:obj[value]+1
-        if(obj[value]>max){
-            max=obj[value]
-            maxValue=value
-        }
-    })
-    return maxValue;
+function seleMax(){
+    var str=document.getElementById('text').value;
+    var arr=str.split('');
+    var json=[];
+    for(let i=0; i<arr.length;i++){
+        json[arr[i]]?json[arr[i]]+=1:json[arr[i]]=1;
+    }
+    var char='';
+    var num=0;
+    for(var hxp in json){
+        json[hxp]>num?(num=json[hxp],char=hxp):null
+    }
+    console.log(json);
+    console.log(`出现频率最高的字符为${char},它出现了${num}次`);
 }
-console.log(strChar(str));

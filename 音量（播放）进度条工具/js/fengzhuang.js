@@ -5,9 +5,6 @@
  *  init    :初始化方法
  *  IIFE    :函数写法（立即执行函数表达式）
  * ********************************* *
- * 使用示例：
- * <button onclick="request()">发送请求</button>
- * 参考jquery方法思想
  **/
 (function(window){
     function Progress($progress_Bar,$progress_Line,$progress_Dot){
@@ -47,7 +44,7 @@
                 $(document).mousemove(function(event){
                     let clickPos=event.pageX;
                     let diff=clickPos-normalLeft;
-                    /** 三元表达式写法 防止进度条移出
+                    /** 三元表达式写法 防止进度条溢出
                     diff>0?[diff>292? ($this.$progress_Line.css("width",292)&$this.$progress_Dot.css("left",292))
                     :$this.$progress_Line.css("width",diff)& $this.$progress_Dot.css("left",diff)]
                     :$this.$progress_Line.css("width",0)&$this.$progress_Dot.css("left",0);
