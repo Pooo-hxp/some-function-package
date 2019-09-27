@@ -1,0 +1,45 @@
+{
+    "reason": "查询成功",
+    "result": {
+        "title": "速度与激情8",
+        "tag": "动作 \/ 犯罪",
+        "act": "范·迪塞尔 道恩·强森 查理兹·塞隆 杰森·斯坦森 米歇尔·罗德里格兹 娜塔莉·伊曼纽尔 埃尔莎·帕塔奇 海伦·米伦 泰瑞斯·吉布森 库尔特·拉塞尔 乔丹娜·布鲁斯特 卢卡斯·布莱克 卢达克里斯 克里斯托弗·海维尤 斯科特·伊斯特伍德 卢克·伊万斯 帕特里克·圣埃斯普利特 Ludacris 娜塔莉·艾玛努埃尔 Tego Calderon null 卢达·克里斯 Charlize Theron",
+        "year": "2017",
+        "rating": null,
+        "area": "美国",
+        "dir": "F·加里·格雷",
+        "desc": "多米尼克（范·迪塞尔 Vin Diesel 饰）与莱蒂（米歇尔·罗德里格兹 Michelle Rodriguez 饰）共度蜜月，布莱恩与米娅退出了赛车界，这支曾环游世界的顶级飞车家族队伍的生活正渐趋平淡。然而，一位神秘女子Cipher（查理兹·塞隆 Charlize T heron 饰）的出现，令整个队伍卷入信任与背叛的危机，面临前所未有的考验。",
+        "cover": "http:\/\/p0.qhimg.com\/t01f4c38244f2fb84fa.jpg",
+        "vdo_status": "play",
+        "playlinks": {
+            "pptv": "",
+            "qiyi": "",
+            "youku": "",
+            "qq": ""
+        },
+        "video_rec": [],
+        "act_s": [
+            {
+                "name": "范·迪塞尔",
+                "url": null,
+                "image": "http:\/\/p6.qhmsg.com\/dmsmty\/120_110_100\/t016881fe0feb4faa2a.jpg"
+            },
+            {
+                "name": "道恩·强森",
+                "url": null,
+                "image": "http:\/\/p4.qhmsg.com\/dmsmty\/120_110_100\/t015d5eb0529d920a02.jpg"
+            },
+            {
+                "name": "查理兹·塞隆",
+                "url": null,
+                "image": "http:\/\/p1.qhmsg.com\/dmsmty\/120_110_100\/t0106d29a20adde8773.jpg"
+            },
+            {
+                "name": "杰森·斯坦森",
+                "url": null,
+                "image": "http:\/\/p4.qhmsg.com\/dmsmty\/120_110_100\/t012392207d6cc51cbf.jpg"
+            }
+        ]
+    },
+    "error_code": 0
+}
