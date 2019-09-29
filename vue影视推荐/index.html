@@ -1,15 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta rel="stylesheet" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <title>移动端音乐播放器</title>
+    <title>影视推荐</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
+    <div class="top-bar text-center text-muted">
+        <!--hidden-xs小屏幕就隐藏掉 -->
+        <div class="container">
+            <div class="row hxp-icon">
+                <div class="row-1 col-md-2  hxp-wx">
+                    <img src="img/心.png" alt="" srcset="">
+                    <a href="">
+                        <span>我的微信号</span>
+                        <span class="caret"></span>
+                        <img src="img/hxp.png" alt="" width="150px">
+                    </a>
+                </div>
+                <div class="row-2 col-md-7  hxp-fenge ">
+                    Call me
+                    <img src="img/头像.png" alt="" srcset="">
+                    <span>：18137805655（在线时间：9:00-24:00）</span>
+                </div>
+                <div class="row-3 col-md-2  hxp-fenge">
+                    <img src="img/路标.png" alt="" srcset="">
+                    <span title="hengxipeng@163.com"></svg><a href="mailto:hengxipeng@163.com">邮件联系我</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="app">
-        {{info}}
+            &#12288<input type="text" class="input" style="width:60%"><button class="btn  btn-sm"
+            style="width:30%;line-height: 1rem;"><img src="/img/搜索.png" style="width:1.8rem">搜一搜</button><br>
+            <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" 
+                        aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                        <marquee onMouseOut="this.start()" onMouseOver="this.stop()">
+                            【最新公告】：吴京参演新作《攀登者》正在热映！
+                            恭喜《小黑》票房突破十亿关口！
+                            【最新公告】：吴京参演新作《攀登者》正在热映！
+                            恭喜《小黑》票房突破十亿关口！
+                        </marquee>
+                    </div>
+                </div>
+               
+        热门影视：
+        <button class="btn btn-success btn-sm">速度与激情8</button>
+        <button class="btn btn-warning btn-sm">变形金刚4</button>
+        <button class="btn btn-info btn-sm">钢铁侠2</button>
+        <button class="btn btn-danger btn-sm">蜘蛛侠</button>
+        <div class="hxp_overflow">
+            <ol class="movie_list">
+                <li>
+                    <div class="movie_listinfo">
+                        <img src="/静态资源/钢铁侠2/主图.jpg" alt="">
+                    </div>
+                    <h4 class="text-info text-center">钢铁侠2</h4>
+                    <p class="">
+                        《钢铁侠2》定于2010年5月7日上映。演员阵容包括罗伯特-汤尼(Robert Downey)、
+                        格温妮丝-帕特洛(Gwyneth Paltrow)、斯嘉丽-约翰逊(Scarlett Johansson)等......
+                    </p>
+                </li>
+                <li>
+                    <div class="movie_listinfo">
+                        <img src="/静态资源/速度与激情8/主图.jpg" alt="">
+                    </div>
+                    <h4 class="text-info text-center">速度与激情8</h4>
+                    <p>
+                        多米尼克（范·迪塞尔 Vin Diesel 饰）与莱蒂（米歇尔·罗德里格兹 Michelle Rodriguez 饰）
+                        共度蜜月，布莱恩与米娅退出了赛车界.....
+                    </p>
+                </li>
+                <li>
+                    <div class="movie_listinfo">
+                        <img src="/静态资源/变形金刚5/主图.jpg" alt="">
+                    </div>
+                    <h4 class="text-info text-center">变形金刚5</h4>
+                    <p>
+                        《变形金刚5：最后的骑士》打破了《变形金刚》系列的核心故事，
+                        重新定义了人们心目中的英雄形象。人类和变形金刚开战，擎天柱失踪，
+                        拯救未来的关键就埋藏之中。。。。
+                    </p>
+                </li>
+                <li>
+                        <div class="movie_listinfo">
+                            <img src="/静态资源/变形金刚5/主图.jpg" alt="">
+                        </div>
+                        <h4 class="text-info text-center">变形金刚5</h4>
+                        <p>
+                            《变形金刚5：最后的骑士》打破了《变形金刚》系列的核心故事，
+                            重新定义了人们心目中的英雄形象。人类和变形金刚开战，擎天柱失踪，
+                            拯救未来的关键就埋藏之中。。。。
+                        </p>
+                    </li>
+            </ol>
+        </div>
+        <div class="row  hxp_btn">
+            <div class="col-xs-4 col-md-4  text-center">
+                <ol>
+                    <li>
+                        <img src="/img/首页.png" alt="首页" >
+                    </li>
+                    <li>首页</li>
+                </ol>
+            </div>
+            <div class="col-xs-4 col-md-4 text-center">
+                <ol>
+                    <li>
+                        <img src="/img/日历.png" alt="登录日志">
+                    </li>
+                    <li>登录日志</li>
+                </ol>
+            </div>
+            <div class="col-xs-4 col-md-4  text-center">
+                <ol>
+                    <li>
+                        <img src="/img/喜欢.png" alt="我的信息">
+                    </li>
+                    <li>我的信息</li>
+                </ol>
+            </div>
+        </div>
     </div>
 </body>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -17,12 +134,5 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="js/index.js"></script>
-<script>
-function person(){
-    this.name=2;
-    return name=33;
-}
-var y=new person();
-console.log(y.name);
-</script>
+
 </html>
