@@ -1,0 +1,16 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ol li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.hxp_act_s ol li{
+    float: left;
+}
+.hxp_btn img{
+    width: 3rem;
+    height: 3rem;
+}
