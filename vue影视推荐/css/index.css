@@ -1,0 +1,63 @@
+/* &#12288 汉字占位符*/
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
+    /* font-size: 62.5%; */
+}
+.hxp-icon img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.top-bar{
+    line-height: 39px;
+    border-bottom: 1px solid rgba(255,0,0,0.3);
+}
+.hxp-wx a img{
+    position: absolute;
+    display: none;
+    margin-top: -10px;
+}
+.hxp-wx a:hover img{
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    z-index: 1;
+}
+.hxp-fenge{
+    border-left: 1px solid gray;
+}
+.hxp-pointer{
+    cursor: pointer;
+}
+.hxp_overflow{
+    height: 40rem;
+    overflow:auto
+}
+#app{
+    background-image: url(/img/data_bg.jpg);
+}
+ol, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.movie_list li{
+    height: 12.2rem;
+    margin: 0.8rem;
+    border: 1px solid green;
+    box-shadow: 2px 2px 2px 2px rgba(227, 158, 240, 0.55);
+    opacity: 0.9;
+}
+/* .movie_listinfo{
+
+} */
+.movie_listinfo img{
+    float: left;
+    width: 10rem;
+    height: 12rem;
+}
+
+.hxp_btn img{
+    width: 3rem;
+    height: 3rem;
+}
