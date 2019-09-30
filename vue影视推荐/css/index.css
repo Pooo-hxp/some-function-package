@@ -2,6 +2,9 @@
 body{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 14px;
+    padding: 0;
+    margin: 0;
+    background-image: url(/img/data_bg.jpg);
     /* font-size: 62.5%; */
 }
 .hxp-icon img{
@@ -33,9 +36,6 @@ body{
     height: 40rem;
     overflow:auto
 }
-#app{
-    background-image: url(/img/data_bg.jpg);
-}
 ol, li{
     margin: 0;
     padding: 0;
@@ -60,4 +60,7 @@ ol, li{
 .hxp_btn img{
     width: 3rem;
     height: 3rem;
+}
+.hxp_recom{
+    
 }
