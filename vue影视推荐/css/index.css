@@ -5,29 +5,15 @@ body{
     padding: 0;
     margin: 0;
     background-image: url(/img/data_bg.jpg);
-    /* font-size: 62.5%; */
 }
-.hxp-icon img{
-    width: 2.5rem;
-    height: 2.5rem;
-}
+
 .top-bar{
     line-height: 39px;
     border-bottom: 1px solid rgba(255,0,0,0.3);
 }
-.hxp-wx a img{
-    position: absolute;
-    display: none;
-    margin-top: -10px;
-}
-.hxp-wx a:hover img{
-    display: block;
-    width: 10rem;
-    height: 10rem;
-    z-index: 1;
-}
-.hxp-fenge{
-    border-left: 1px solid gray;
+#hxp_lunbo img{
+    width: 100%;
+    height: 20rem;
 }
 .hxp-pointer{
     cursor: pointer;
@@ -61,6 +47,6 @@ ol, li{
     width: 3rem;
     height: 3rem;
 }
-.hxp_recom{
+.hxp_recom img{
     
 }
