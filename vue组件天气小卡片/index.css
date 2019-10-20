@@ -1,0 +1,32 @@
+/* --------------天气卡片区------------ */
+.hxp-weather {
+    margin: 1rem auto;
+    color: #394568;
+    background: linear-gradient(to bottom, #d1d8eb 40%, #222 100%);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    width: 80%;
+    height: 15rem;
+    align-items: flex-end;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    font-family: "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.hxp-weather-header {
+    width: 100%;
+    height: 50%;
+}
+
+.hxp-weather-footer {
+    width: 100%;
+    height: 50%;
+    background: whitesmoke;
+}
+
+.hxp-weather-footer-left,
+.hxp-weather-footer-right {
+    width: 50%;
+    height: 5rem;
+    float: left;
+}
