@@ -1,3 +1,20 @@
+/* 公共样式便于统一 */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background: url(img/msg-bg.png);
+    background-position-y: 10rem;
+    background-size: cover;
+}
+
+ol li,
+ul li {
+    list-style: none;
+}
+
 /* --------------天气卡片区------------ */
 .hxp-weather {
     margin: 1rem auto;
