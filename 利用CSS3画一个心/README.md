@@ -92,3 +92,40 @@ CSS
             left: -15px;
         }
 ```
+          .heart {
+            width: 30px;
+            height: 30px;
+            top: 50px;
+            left: 50px;
+            background: red;
+            position: relative;
+            transform: rotate(45deg);
+            /*下面是为了做兼容*/
+            /* -webkit-transform: rotate(45deg); */
+            /* -moz-transform: rotate(45deg); */
+        }
+
+        .heart:after,
+        .heart:before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            border-radius: 50%;
+            /* -webkit-border-radius: 50%; */
+            /* -moz-border-radius: 50%; */
+            position: absolute;
+        }
+
+        .heart:after {
+            top: -15px;
+        }
+
+        .heart:before {
+            left: -15px;
+        }
+
+作者：Sad_Pooo
+链接：https://juejin.im/post/5db671d26fb9a02056019f91
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
