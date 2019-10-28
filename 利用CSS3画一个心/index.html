@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .heart {
+            width: 30px;
+            height: 30px;
+            top: 50px;
+            left: 50px;
+            background: #f00;
+            position: relative;
+            transform: rotate(45deg);
+            /*下面是为了做兼容*/
+            /* -webkit-transform: rotate(45deg); */
+            /* -moz-transform: rotate(45deg); */
+        }
+
+        .heart:after,
+        .heart:before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            border-radius: 50%;
+            /* -webkit-border-radius: 50%; */
+            /* -moz-border-radius: 50%; */
+            position: absolute;
+        }
+
+        .heart:after {
+            top: -15px;
+        }
+
+        .heart:before {
+            left: -15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heart">
+    </div>
+</body>
+
+
+</html>
