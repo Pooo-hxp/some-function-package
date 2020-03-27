@@ -8,31 +8,61 @@
 </head>
 <style>
     .IN {
-        width: 600px;
+        width: 400px;
         top: 200px;
-        margin: 0 auto;
+        left: 600px;
         position: relative;
-        border: 1px solid black;
     }
 
-    div {
+    input {
+        width: 200px;
+        height: 25px;
+    }
+
+    textarea {
         width: 400px;
-        height: 400px;
+        height: 100px;
         top: 200px;
-        margin: 0 auto;
+        left: 600px;
         position: relative;
         border: 1px solid black;
     }
 </style>
 
 <body>
-    <p class="IN"><span>输入GMT格式时间</span><input type="text"><button> 转换</button></p>
+    <p class="IN"><span>粘入GMT格式时间</span><input type="text" id="date" value="123"><button id="transform"> 转换</button></p>
     <p class="IO">
-        <div>输入GMT格式时间</div>
+        <textarea id="txt"></textarea>
     </p>
 </body>
 <script>
+    transform.onclick = function () {
+        let transform = document.getElementById('transform');
+        let date = document.getElementById('date').value;
+        let txt = document.getElementById('txt');
+        console.log('执行')
+        // if date='Fri Mar 27 2020 09:45:15 GMT+0800'
+        txt.value=formative(date)
+        console.log('执行')
 
+    }
+
+    function formative(GMT) {
+        let date = new Date(GMT)
+        var Y = puls(date.getFullYear());
+        var M = puls(date.getMonth() + 1);
+        var d = puls(date.getDate());
+        var h = puls(date.getHours());
+        var m = puls(date.getMinutes());
+        var s = puls(date.getSeconds());
+        var date_value = `${Y}-${M}-${d} ${h}:${m}:${s}`;
+        return date_value;
+        //2020-03-27 09:45:15
+    };
+    function puls(s) {
+        //不满10前置位补'0'
+        return s < 10 ? '0' + s : s;
+    }
 </script>
 
 </html>
