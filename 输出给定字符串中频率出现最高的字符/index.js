@@ -1,4 +1,5 @@
 function seleMax(){
+    //检测出现频率最高的字符
     var str=document.getElementById('text').value;
     var arr=str.split('');
     var json=[];
