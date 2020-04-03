@@ -13,4 +13,5 @@
 - 解决：穿透样式改变抽屉和遮罩层的z-index小于全局组件值就可以了
 - 总结：全局组件挂在后不会被销毁，DOM的顺序就可能排在后创建的DOM之前，
 - 若z-indx相同，那么后创建的显示在最上面
-![Image text](https://github.com/Pooo-hxp/some-function-package/blob/master/photo/seleMax.png?raw=true)
+---
+![Image text](https://github.com/Pooo-hxp/some-function-package/blob/master/photo/TucengBug.png?raw=true)
