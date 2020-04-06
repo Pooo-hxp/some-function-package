@@ -28,6 +28,7 @@
     };
     window.Loop=Loop;
 })(window);
+
 /**下方为普通面向过程写法 */
     /*lf.click(function(){
         flag==0?flag=4:flag--;
