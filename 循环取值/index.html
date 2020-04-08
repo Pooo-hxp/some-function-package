@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var flag = "a[1]";
+    var json = {
+        'a': [{
+            "b": "c"
+         }, 'd'],
+        'x': 1
+    }
+    // ---使用eval--------------
+    // function get(json,y){
+    //     console.log(eval(`json.${y}`));
+    // }
+    // get(json2,flag);
+    //----不使用eval，手动遍历----------------
+    var index = flag.split('');
+    var reuse = '';
+    function get2() {
+        //遍历对象
+        for (let i in json) {
+            if (i == index[0]) {
+                // 判定传参
+                index.length == 1 ? reuse = json[i] : (function () {
+                    for (let j in json[i]) {
+                        reuse = json[i]+index[2];
+                        console.log(reuse);
+                    }
+                }())
+
+            }
+        }
+    console.log(reuse);
+    }
+    get2()
+</script>
+
+</html>
