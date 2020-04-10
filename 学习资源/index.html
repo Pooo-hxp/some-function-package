@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='odiv'></div>
+</body>
+<script>
+    var i,j;
+    var str="<table border='2'>";
+    for(i=1;i<=9;i++){
+        str+="<tr>";
+        for(j=1;j<=i;j++){
+            str+="<td>"+j+'*'+i+"="+j*i+"</td>";
+        }
+        str+="</tr>";
+    }
+    str+="</table>";
+    document.getElementById('odiv').innerHTML=str
+</script>
+</html>
