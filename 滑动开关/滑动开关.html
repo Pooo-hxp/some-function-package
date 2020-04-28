@@ -1,42 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <style type="text/css">        
+    <style type="text/css">
+        .cw-switch {
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+            line-height: 22px;
+            border-radius: 24px;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            background-color: #ccc;
+            position: relative;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: all .2s ease-in-out
+        }
 
-        .cw-switch{display:inline-block;width:48px;height:24px;line-height:22px;border-radius:24px;vertical-align:middle;border:1px solid #ccc;background-color:#ccc;position:relative;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:all .2s ease-in-out}
-        .cw-switch-inner{color:#fff;font-size:12px;position:absolute;left:25px}
-    
-        .cw-switch:after{content:'';width:20px;height:20px;border-radius:20px;background-color:#fff;position:absolute;left:1px;top:1px;cursor:pointer;transition:left .2s ease-in-out,width .2s ease-in-out}
-        .cw-switch:active:after{width:26px}
-        .cw-switch-checked{border-color:#39f;background-color:#39f}
-        .cw-switch-checked .cw-switch-inner{left:8px}
-        .cw-switch-checked:after{left:25px}.cw-switch-checked:active:after{left:19px}
-        .cw-switch-disabled{cursor:not-allowed;background:#f3f3f3;border-color:#f3f3f3}
-        .cw-switch-disabled:after{background:#ccc;cursor:not-allowed}.cw-switch-disabled .cw-switch-inner{color:#ccc}
+        .cw-switch-inner {
+            color: #fff;
+            font-size: 12px;
+            position: absolute;
+            left: 25px
+        }
+
+        .cw-switch:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background-color: #fff;
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            cursor: pointer;
+            transition: left .2s ease-in-out, width .2s ease-in-out
+        }
+
+        .cw-switch:active:after {
+            width: 26px
+        }
+
+        .cw-switch-checked {
+            border-color: #39f;
+            background-color: #39f
+        }
+
+        .cw-switch-checked .cw-switch-inner {
+            left: 8px
+        }
+
+        .cw-switch-checked:after {
+            left: 25px
+        }
+
+        .cw-switch-checked:active:after {
+            left: 19px
+        }
+
+        .cw-switch-disabled {
+            cursor: not-allowed;
+            background: #f3f3f3;
+            border-color: #f3f3f3
+        }
+
+        .cw-switch-disabled:after {
+            background: #ccc;
+            cursor: not-allowed
+        }
+
+        .cw-switch-disabled .cw-switch-inner {
+            color: #ccc
+        }
     </style>
 </head>
+
 <body>
     <div class="cw-switch cw-switch-checked">
         <div class="cw-switch-inner">
-            <span id="word">开</span>
+            <span id="word"></span>
         </div>
     </div>
 
     <script type="text/javascript">
-        $(function(){
-            $(".cw-switch").click(function() {
-                if($(this).hasClass('cw-switch-checked')){
-                    $("#word").text('关')
-                }else{
-                    $("#word").text('开')
-                }
+        $(function () {
+            $(".cw-switch").click(function () {
+
                 $(this).toggleClass('cw-switch-checked');
-                
+
             });
         })
     </script>
 </body>
+
 </html>
