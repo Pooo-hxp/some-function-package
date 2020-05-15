@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序</title>
+</head>
+
+<body>
+</body>
+<script>
+    /**
+     * 冒泡思想
+     * 拿当前项与后一项对比，比后项大交换位置否则不变
+     * 外轮循环arr.length-1
+     * 这样每过一轮比较，当前数组中最大的就会放到末尾
+     * 内部需要循环arr.lenth-1-第几次循环
+     */
+    let sort = [12, 8, 24, 16, 50, 6];
+    let temp='';//中间转存
+    //控制循环的轮数i
+    for (let i = 0; i < sort.length-1; i++) {
+        //控制比较的次数
+        for (let j = 0; j < sort.length-1-i; j++) {
+            if(sort[j]>sort[j+1]){
+                // 当前项大于后一项
+                // temp=sort[j]
+                // sort[j]=sort[j+1];
+                // sort[j+1]=temp
+                // ES6结构赋值简写如下
+                [sort[j],sort[j+1]]=[sort[j+1],sort[j]];
+            }
+        }
+    }
+    console.log('排序后',sort);
+</script>
+
+</html>
