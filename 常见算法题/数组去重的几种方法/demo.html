@@ -12,7 +12,7 @@
     let array=[2,6,8,10,12,8,6,9,18,15];
    console.log(array);
     /**
-     * 第一种利用ES6里的Set
+     * 壹、利用ES6里的Set和...展开运算符
     */
    let arr=new Set(array)//虽然去除重复项，但返回的是Set类的实例，不是数组类型
    let arr1=[...new Set(array)]//去除重复项且展开运算符转化为数组
@@ -21,15 +21,27 @@
    console.log('展开运算符',arr1);
    console.log('Array方法',arr2);
     /**
-     * 常规方法，利用indexOf()方法
-     * 重新生成一个数组
+     * 贰、常规方法，利用indexOf()方法
     */
-   var newArray=[];
+   let newArray=[];
    for(let i=0;i<array.length;i++){
        if(newArray.indexOf(array[i])==-1){
         newArray.push(array[i])
        }
    }
    console.log('经典普通方法',newArray);
+   /**
+    * 叁、利用indexOf和continue跳过当前循环
+   */
+  let newArray2=[];
+  for (let i = 0; i < array.length; i++) {
+      let item=array[i];
+      if(newArray2.indexOf(array[i])!==-1){
+        continue;
+       }
+       newArray2.push(array[i])
+          //因此就跳过这次循环，进行下次
+  }
+  console.log('跳过方法',newArray2);
 </script>
 </html>
