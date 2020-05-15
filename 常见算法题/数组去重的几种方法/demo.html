@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
-    let array=[2,6,8,10,12,8,6,9,18,15];
-   console.log(array);
+    let array = [2, 6, 8, 10, 12, 8, 6, 9, 18, 15];
+    console.log(array);
     /**
-     * 壹、利用ES6里的Set和...展开运算符
-    */
-   let arr=new Set(array)//虽然去除重复项，但返回的是Set类的实例，不是数组类型
-   let arr1=[...new Set(array)]//去除重复项且展开运算符转化为数组
-   let arr2=Array.from(new Set(array))//或者利用Array转化为数组
-   console.log(arr);//未处理不是数组
-   console.log('展开运算符',arr1);
-   console.log('Array方法',arr2);
+     * 壹、利用ES6里的Set和...展开运算符去重
+     */
+    let arr = new Set(array) //虽然去除重复项，但返回的是Set类的实例，不是数组类型
+    let arr1 = [...new Set(array)] //去除重复项且展开运算符转化为数组
+    let arr2 = Array.from(new Set(array)) //或者利用Array转化为数组
+    console.log(arr); //未处理不是数组
+    console.log('展开运算符', arr1);
+    console.log('Array方法', arr2);
     /**
-     * 贰、常规方法，利用indexOf()方法
-    */
-   let newArray=[];
-   for(let i=0;i<array.length;i++){
-       if(newArray.indexOf(array[i])==-1){
-        newArray.push(array[i])
-       }
-   }
-   console.log('经典普通方法',newArray);
-   /**
-    * 叁、利用indexOf和continue跳过当前循环
-   */
-  let newArray2=[];
-  for (let i = 0; i < array.length; i++) {
-      let item=array[i];
-      if(newArray2.indexOf(array[i])!==-1){
-        continue;
-       }
-       newArray2.push(array[i])
-          //因此就跳过这次循环，进行下次
-  }
-  console.log('跳过方法',newArray2);
+     * 贰、常规方法，利用indexOf()方法去重
+     */
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (newArray.indexOf(array[i]) == -1) {
+            newArray.push(array[i])
+        }
+    }
+    console.log('经典普通方法', newArray);
+    /**
+     * 叁、利用indexOf和continue跳过当前循环去重
+     */
+    let newArray2 = [];
+    for (let i = 0; i < array.length; i++) {
+        let item = array[i];
+        if (newArray2.indexOf(array[i]) !== -1) {
+            continue;
+        }
+        newArray2.push(array[i])
+        //因此就跳过这次循环，进行下次
+    }
+    console.log('跳过方法', newArray2);
+    /**
+     * 肆、哈希表思想去重（最高性能）
+     * 定义一对象hash
+     * 将数组每个元素通过hash[arrSame[i]]在hash中查询，
+     * 如果数组元素arrSame[i]在hash中，则hash[arrSame[i]]结果为true,
+     * 如果不存在，则hash[arrSame[i]]结果为undefined
+     */
+    let result = [];
+    let hash = {};
+    for (let i = 0; i < array.length; i++) {
+        if(!hash[array[i]]){
+            result.push(array[i]);
+            hash[array[i]]=true;
+        }
+    }
+    console.log('哈希表思想',result);
 </script>
+
 </html>
