@@ -44,7 +44,7 @@
                 $(document).mousemove(function(event){
                     let clickPos=event.pageX;
                     let diff=clickPos-normalLeft;
-                    /** 三元表达式写法 防止进度条溢出
+                    /**  防止进度条溢出
                     diff>0?[diff>292? ($this.$progress_Line.css("width",292)&$this.$progress_Dot.css("left",292))
                     :$this.$progress_Line.css("width",diff)& $this.$progress_Dot.css("left",diff)]
                     :$this.$progress_Line.css("width",0)&$this.$progress_Dot.css("left",0);
