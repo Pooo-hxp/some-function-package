@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
     //实现一个斐波那契数列
-    function fbnq(n){
-        let arr=[1,1];
-        // if
+    /**
+    * flag为想查询数列中第几项
+    * curr为一项 next为二项 二者相加为第三项
+    * 这是比较简便的方法
+    */
+    function fbnq(flag) {
+        function fn(flag, curr = 1, next = 1) {
+            if (flag == 1)
+                return curr;
+            else
+                return fn(flag - 1, next, curr + next);
+        }
+        return fn(flag);
     }
+    console.log("斐波那契数列中第六项为",fbnq(6));
+    // 建议用这种比较好理解的方法
+    function fb(n){
+        if(n-2>0)
+        return fb(n-2)+fb(n-1);
+        else
+        return 1;
+    }
+    console.log("斐波那契数列中第六项为",fb(6));
 </script>
+
 </html>
