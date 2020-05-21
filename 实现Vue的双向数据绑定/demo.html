@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <input type="text" id="hxp">
+    <p id="hxp_text"></p>
 </body>
+<script>
+    /**
+     * 这种极简版虽然能实现功能，但是操作大量dom效率很低
+    */
+    var test_obj = {};
+    Object.defineProperty(test_obj, 'shuxing', {
+        get: function () {
+            console.log('触发get方法');
+            return '读取'
+        },
+        set: function (_txt) {
+            document.getElementById('hxp').value = _txt;
+            document.getElementById('hxp_text').innerHTML = _txt;
+            console.log('触发set方法');
+        }
+    })
+    // 写入时触发set方法
+    test_obj.shuxing = 'hengxipeng';
+    // 读取时触发get方法
+    console.log(test_obj.shuxing);
+    // 监听键盘按键输入
+    document.addEventListener('keyup', function (e) {
+        let text = e.target.value;
+        // 触发set方法从而起到相应改变
+        test_obj.shuxing = text;
+    })
+</script>
+
 </html>
