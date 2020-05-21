@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常规写法</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" hxp-model='msg' value="11">
+        <input type="text" hxp-model='txt' value="22">
+        {{msg}}{{txt}}
+        <div>衡西彭彭</div>
+    </div>
+</body>
+<script>
+    /**
+     * 把数据和节点挂载到一起
+     * 避免页面回流，不可直接操作dom节点
+     * 把操作的节点直接放进内存中，拼接完成后再添加上去
+     * createDocumentFragment
+     * （当需要操作多个dom元素时，可以先把那些元素放到createDocumentFragment里）
+     * （这样可以减少页面渲染dom的次数，提升效率）
+     */
+    function compile(el) {
+        let ele = document.querySelector(el);
+        //创建一个文档碎片
+        let fragmet = document.createDocumentFragment();
+        //取ele下第一个元素，一直到取不到元素
+        let child;
+        while (child = ele.firstChild) {
+            //把它的节点都取出放到文档碎片中去
+            fragmet.appendChild(child)
+        }
+
+        function replace(fragmet) {
+            //可以在添加前对所有的节点做一些操作
+            Array.from(fragmet.childNodes).forEach(node => {
+                //循环判断，1、当前节点是标签
+                if (node.nodeType === 1) { //标签节点
+                    // console.log(node.attributes);
+                    //node.attributes是当前元素身上的属性的集合
+                    Array.from(node.attributes).forEach(item => {
+                        //此时item为当前标签身上的属性和值键值对
+                        let {
+                            name,
+                            value
+                        } = item;
+                        //等同以下两行
+                        // let name=item.name
+                        // let value=item.value
+                        //判断当前节点属性中是否包含我自定义的hxp-开头的属性
+                        if (name.includes('hxp-')) {
+                            // console.log(node);
+                        }
+                    })
+                }
+                //2、当前节点是文本
+                // 定义正则，匹配文本里的{{}} 文本内容遇到}为止（[^}]*）;
+                let reg = /\{\{([^}]*)\}\}/g;
+                let nodeTxt = node.textContent;
+                if (node.nodeType === 3 && reg.test(nodeTxt)) { //文本节点
+                    // 元素为文本，并且有指定字符
+                    console.log(node.textContent);
+                }
+                //3、当前节点还有节点，那么就递归
+                if (node.childNodes.length !== 0) { 
+                    replace(node)
+                }
+            });
+        }
+        replace(fragmet)
+        //再给它添加回原节点
+        ele.appendChild(fragmet)
+    }
+    compile('#app')
+</script>
+
+</html>
