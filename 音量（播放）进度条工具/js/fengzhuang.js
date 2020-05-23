@@ -1,10 +1,12 @@
 /**
+ * **********************************
  * create by Function in 2019/08/31
  * 作用： 面向对象思想示例
  * Progress 构造函数
  *  init    :初始化方法
  *  IIFE    :函数写法（立即执行函数表达式）
- * ********************************* *
+ * Author   :hxp
+ * ***********************************
  **/
 (function(window){
     function Progress($progress_Bar,$progress_Line,$progress_Dot){
