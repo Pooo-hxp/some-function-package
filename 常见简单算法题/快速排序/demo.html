@@ -30,7 +30,8 @@
         for (let i = 0; i < arr.length; i++) {
             let item = arr[i];
             // 比中间项大的放右边数组，小的放左边数组
-            item > key ? arrRight.push(item) : arrLeft.push(item)
+            //如果加上相等判定，则可以用于数组去重
+            item > key ? arrRight.push(item) : (item==key?console.log('去重复'): arrLeft.push(item))
         }
         // 利用递归，左+中间项+右输出
         return quick(arrLeft).concat(key, quick(arrRight));
