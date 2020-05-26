@@ -10,9 +10,9 @@
 <body>
     <div id="app">
         <input type="text" hxp-model='msg' value="11">
-        <input type="text" hxp-model='txt' value="22">
-        {{msg}}{{txt}}
-        <div>衡西彭彭</div>
+        <input type="text" hxp-model='name' value="22">
+        <br>这是msg文本  --- {{msg}}
+        <br>这是name文本  --{{name}}
     </div>
 </body>
 <script>
@@ -24,9 +24,41 @@
      * （当需要操作多个dom元素时，可以先把那些元素放到createDocumentFragment里）
      * （这样可以减少页面渲染dom的次数，提升效率）
      */
+    let obj = {
+        msg: new ViewModel('welcome to you'),
+        name: new ViewModel('土豆')
+    };
+
+    function ViewModel(data) {
+        this.data = data; //当前值
+        this.nodes = []; //存放节点
+    }
+    ViewModel.prototype.bindNode = function (node) {
+        //这里是将节点和数据绑定在一起
+        this.nodes.push(node);
+        console.log('调试', this.nodes);
+    };
+    ViewModel.prototype.updated = function () {
+        //这里是将节点更新渲染
+        this.nodes.forEach(item => {
+            //如果是标签就直接替换data
+            item.nodeType === 1 ? item.value = this.data :
+                //如果是文本类似{{msg}}之类的
+                (item.textContent = item.my.replace(/\{\{([^}]*)\}\}/g,
+                    function () {
+                        return obj[arguments[1]].data;
+                    }))
+        })
+    };
+    ViewModel.prototype.setVal = function (newVal) {
+        //这里是设置文本
+        newVal !== this.data ? //设置的值与之前值相同
+            (this.data = newVal, this.updated()) : console.log('补位');
+    };
+
     function compile(el) {
         let ele = document.querySelector(el);
-        //创建一个文档碎片
+        //创建文档碎片
         let fragmet = document.createDocumentFragment();
         //取ele下第一个元素，一直到取不到元素
         let child;
@@ -44,16 +76,17 @@
                     //node.attributes是当前元素身上的属性的集合
                     Array.from(node.attributes).forEach(item => {
                         //此时item为当前标签身上的属性和值键值对
-                        let {
-                            name,
-                            value
-                        } = item;
+                        let {name,value} = item;
                         //等同以下两行
                         // let name=item.name
                         // let value=item.value
                         //判断当前节点属性中是否包含我自定义的hxp-开头的属性
                         if (name.includes('hxp-')) {
-                            // console.log(node);
+                            obj[value].bindNode(node) //输入框
+                            //添加一个事件监听,动态响应数据的改变
+                            node.addEventListener('input',function(e){
+                                obj[value].setVal(e.target.value)
+                            })
                         }
                     })
                 }
@@ -62,16 +95,23 @@
                 let reg = /\{\{([^}]*)\}\}/g;
                 let nodeTxt = node.textContent;
                 if (node.nodeType === 3 && reg.test(nodeTxt)) { //文本节点
+                    //自定义属性保留原有名称
+                    node.my = nodeTxt;
                     // 元素为文本，并且有指定字符
-                    console.log(node.textContent);
+                    nodeTxt.replace(reg, function () {
+                        obj[arguments[1]].bindNode(node)
+                    })
                 }
                 //3、当前节点还有节点，那么就递归
-                if (node.childNodes.length !== 0) { 
+                if (node.childNodes.length !== 0) {
                     replace(node)
                 }
             });
         }
-        replace(fragmet)
+        replace(fragmet) //编译后调用更新方法
+        Object.keys(obj).forEach(key => { //对象转为数组
+            obj[key].updated();
+        })
         //再给它添加回原节点
         ele.appendChild(fragmet)
     }
