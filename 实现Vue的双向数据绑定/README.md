@@ -9,7 +9,14 @@
 - 需要操作的属性
 - 被操作属性的特性 
 #### 避免页面回流，浪费性能，常规实现双向数据绑定方法请看demo2
+- 创建compile方法处理节点类型和数据
 - 创建一个querySelector文档碎片存储获取的APP下的节点
 - 对节点进行循环遍历，区分是标签节点还是文本
 - 标签节点：循环节点上attributes，判定属性中是否有自定义属性
 - 文本：利用正则匹配文本中是否有{{}}符号
+#### 创建一个ViewModel方法利用原型链创建一个方法
+- 创建一个obj对象存放数据
+- ViewModel.prototype.bindNode方法将节点和数据绑定在一起
+- ViewModel.prototype.updated方法判断变更节点类型渲染数据
+- ViewModel.prototype.setVal搭配updated方法同步数据
+- node.addEventListener监听输入事件触发setVal方法
