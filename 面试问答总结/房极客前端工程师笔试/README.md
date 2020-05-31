@@ -14,7 +14,7 @@
 ##### 已知JSONP请求函数实现如下，但同时发送多个请求时容易出错，请分析错误原因，
 ##### 并在不改变函数签名的前提下调整代码解决问题
  ```
-   题如下 function sendJsonp(url,callback){
+   function sendJsonp(url,callback){
         const script=document.createElement('script');
         script.src=url+'?name=fun'
         windows.fun=callback;
