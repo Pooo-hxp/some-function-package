@@ -4,7 +4,7 @@
 ##### 已知函数‘fun’将返回一个Promise'p','p'的结果取决于参数‘promises’（一个不定长的Promise数组）
 #### 如果参数中任何一个Promise状态为成功，则‘p’状态也为成功，如果参数中所有Promise状态为失败
 #### 则‘p’状态也为失败，请在不借助其他Promise方法前提下实现这个函数
-  ```
+  ```javascript
   /**
    *@param{Promise[]} promises
    *@return {Promise} p
@@ -43,7 +43,7 @@
 -  执行函数体 修改构造函数this指针指向空对象,并执行函数体
 `var result =Func.call(obj);`
 -  判断返回值 返回对象就用该对象,没有的话就创建一个对象
-```
+```javascript
  if (typeof(result) == "object"){
   func=result;`
  }
