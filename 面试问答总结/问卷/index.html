@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="par">
+        <div class="son">
+            <div id="question">
+                <p><strong>a、听到保健食品这个词语的时候，您会立即想到哪些具体的产品？请把你最先想到的3个产品名称写下来</strong></p>
+                <textarea class='questionVal'></textarea>
+                <textarea class='questionVal'></textarea>
+                <textarea class='questionVal'></textarea>
+                <p><button class="btn">Next</button></p>
+                <p><strong>b、最近购买的一台智能手机的零售价是多少？</strong></p>
+                <textarea id="price" keydown="checkPrice()"></textarea><br>
+                <input type="checkbox" id="checkSel" onclick="checkBox(this)"><em>我不清楚／不记得价格</em>
+            </div>
+            <div id="dragg">
+                <table border="1">
+                    <thead>
+                        <th>SPECIFICATIONS功能</th>
+                        <th>LEVELS规格</th>
+                        <th>SELECTED选择</th>
+                    </thead>
+                    <tr>
+                        <td>Screen size屏幕大小</td>
+                        <td class="list" id="size">
+                            <p draggable="true" ondragstart="drag(event)" id="size1">5</p>
+                            <p draggable="true" ondragstart="drag(event)" id="size2">5.5</p>
+                            <p draggable="true" ondragstart="drag(event)" id="size3">6</p>
+                            <p draggable="true" ondragstart="drag(event)" id="size4">6.5</p>
+                        </td>
+                        <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    </tr>
+                    <tr>
+                        <td>Screen resolution屏幕分辨率</td>
+                        <td class="list" id="dpi">
+                            <p draggable="true" ondragstart="drag(event)" id="dpi1">High definition (720p) 高清（720p）</p>
+                            <p draggable="true" ondragstart="drag(event)" id="dpi2">Full HD (1080p) 全高清（1080p）</p>
+                            <p draggable="true" ondragstart="drag(event)" id="dpi3">Quad HD (2K) 四倍高清（2K）</p>
+                            <p draggable="true" ondragstart="drag(event)" id="dpi4">Ultra HD (4K) 超高清（4K）</p>
+                        </td>
+                        <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    </tr>
+                </table>
+                <p><button class="btn submit">提交</button></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

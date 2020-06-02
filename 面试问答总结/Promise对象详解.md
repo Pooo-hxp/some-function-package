@@ -1,16 +1,17 @@
  * **********************************
-  create the document on 2020/06/01
-  作用： 深入理解Promise
-  Author   :土豆哥
+  - create the document on 2020/06/01
+  - 作用： 深入理解Promise
+  - Author   :土豆哥
  * ***********************************
 ### 关于Promise对象
 ##### Promise是什么
-* 它是JS中进行异步编程的解决方案
-* 语法上来说：它是一个构造函数
-* 功能上说：它用来封装一个异步操作，并获取结果
-* Promise的状态,且状态只可改变一次，不可逆
- 1. pending(初始状态，未确定)变为resolved(成功)
- 2. pending(初始状态，未确定)变为rejected(失败) 
++ 它是JS中进行异步编程的解决方案
++ 语法上来说：它是一个构造函数
++ 功能上说：它用来封装一个异步操作，并获取结果
++ Promise的状态,且状态只可改变一次，不可逆
+  - pending(初始状态，未确定)变为resolved(成功)
+  - pending(初始状态，未确定)变为rejected(失败) 
+  ---
 ##### Promise的基本流程
 * &#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;（resolved状态）
 * &#8195;&#8195;&#8195;&#8195; &#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;——>成功，执行resolve()——>then()
@@ -35,6 +36,7 @@
       }
   )
 ```
+ ---
 ##### 为什么要使用Promise？
 * 应用其链式调用，解决回调地狱
 * 回调地狱指的是回调函数的嵌套调用，不利于代码的阅读，不利于错误处理
@@ -73,16 +75,17 @@
      }
  }
 ```
+  ---
 ##### 如何使用Promise？
 + 一、`Promise`构造函数：`Promise(excutor){}`
- - `excutor`函数：同步执行`(resolve,reject)=>{}`
- - `resolve`函数：内部定义成功时调用的函数`value=>{}`
- - `reject`函数：内部定义失败时调用的函数`reason=>{}`
- -  说明：`excutor`在`Promise`内部立即同步回调，异步操作在执行器中执行
+  - `excutor`函数：同步执行`(resolve,reject)=>{}`
+  - `resolve`函数：内部定义成功时调用的函数`value=>{}`
+  - `reject`函数：内部定义失败时调用的函数`reason=>{}`
+  -  说明：`excutor`在`Promise`内部立即同步回调，异步操作在执行器中执行
 + 二、`Promise.prototype.then`方法：`(onResolve,onRejected)=>{}`
- - `onResolved`函数：成功的回调函数`(value)=>{}`
- - `onRejected`函数：失败的回调函数`(reason)=>{}`
- - 说明：指定用于得到成功value的成功回调，和用于得到失败reason的失败回调，返回新的Promise对象
+  - `onResolved`函数：成功的回调函数`(value)=>{}`
+  - `onRejected`函数：失败的回调函数`(reason)=>{}`
+  - 说明：指定用于得到成功value的成功回调，和用于得到失败reason的失败回调，返回新的Promise对象
 + 三、`Promise.prototype.catch`方法：`(onRejected)=>{}`
   - `onRejected`函数：失败的回调函数`(reason)=>{}`
   - 说明：`then()`的语法糖，相当于：`then(undefined,onRejected)`
@@ -98,4 +101,4 @@
 + 六、`Promise.race`方法：`(promise)=>{}`
   - `promise`：包含N个promise的数组
   - 说明：返回一个新的的Promise对象，第一个完成的Promise的结果状态就是最终的结果状态
-
+ ---
