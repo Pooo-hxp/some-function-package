@@ -95,10 +95,10 @@
 + 五、`Promise.reject`方法：`(reason)=>{}`
   - `reason`：失败的原因
   - 说明：返回一个失败的Promise对象
-+ 五、`Promise.all`方法：`(promise)=>{}`
++ 六、`Promise.all`方法：`(promise)=>{}`
   - `promise`：包含N个promise的数组
   - 说明：返回一个新的的Promise对象，所有的promise都成功才成功，任一失败直接失败
-+ 六、`Promise.race`方法：`(promise)=>{}`
++ 七、`Promise.race`方法：`(promise)=>{}`
   - `promise`：包含N个promise的数组
   - 说明：返回一个新的的Promise对象，第一个完成的Promise的结果状态就是最终的结果状态
  ---
