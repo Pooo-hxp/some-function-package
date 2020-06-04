@@ -1,0 +1,332 @@
+body {
+  margin: 0px;
+  font-size: 0px;
+}
+
+/*铃铛*/
+#LingDang {
+  margin: 0px;
+  z-index: 20;
+  position: fixed;
+  right: 10px;
+  bottom: 15px;
+  border-radius: 100% 100%;
+}
+#LingDang > img {
+  height: 40px;
+  width: 40px;
+  transform-origin: 100% 50%;
+  /*旋转的中心点*/
+  animation: LDyinyue 1s;
+  /*动画名字和速度*/
+  animation-iteration-count: infinite;
+  /*执行次数*/
+  animation-timing-function: ease-in-out;
+  /*开始到结束速度*/
+  animation-play-state: running;
+  /*页面加载后的状态*/
+}
+@keyframes LDyinyue {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+/*场景背景音乐*/
+#bgms{
+    display: none;
+}
+
+/*主内容*/
+#Zhu > div {
+  position: relative;
+  overflow: hidden;
+}
+#Zhu > div > img {
+  width: 100%;
+}
+
+#Huadong {
+  z-index: 10;
+  display: block;
+  position: absolute;
+  top: 60%;
+  left: 20px;
+  height: 30%;
+  width: 4%;
+}
+#Huadong > img {
+  height: 100%;
+  width: 100%;
+}
+
+/*第一个光圈*/
+#D2_1 {
+  height: 50px;
+  width: 50px;
+  z-index: 10;
+  position: absolute;
+  /*left: 125px;
+          top: 282px;*/
+}
+#D2_1 > img {
+  height: 100%;
+  width: 100%;
+  animation: G 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running;
+}
+@keyframes G {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*第二个光圈*/
+#D2_2 {
+  height: 60px;
+  width: 60px;
+  z-index: 10;
+  position: absolute;
+}
+#D2_2 > img {
+  height: 100%;
+  width: 100%;
+  animation: G 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+/*狗的呼噜*/
+#D2_3 {
+    width: 1%;
+    z-index: 10;
+    position: absolute;
+}
+#D2_3 > img{
+    height: 100%;
+    width: 100%;
+    animation: gou 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  animation-play-state: running;
+}
+@keyframes gou{
+    0%{
+        transform: translate(0%,0%) scale(1);
+    }
+    40%{
+        transform: translate(0%,0%) scale(1);
+    }
+    41%{
+        transform: translate(150%,250%) scale(1.5);
+    }
+    70%{
+        transform: translate(150%,250%) scale(1.5);
+    }
+    71%{
+        transform: translate(380%,630%) scale(2);
+    }
+    100%{
+        transform: translate(380%,630%) scale(2);
+    }
+}
+/*星星*/
+.D3_1 {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  position: absolute;
+}
+.D3_1 > img {
+  width: 100%;
+  height: 100%;
+  animation: G 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+.D3_2 {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  position: absolute;
+}
+.D3_2 > img {
+  width: 100%;
+  height: 100%;
+  animation: G 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  animation-delay: 1s;
+}
+.D3_3 {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  position: absolute;
+}
+.D3_3 > img {
+  width: 100%;
+  height: 100%;
+  animation: G 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  animation-delay: 0.5s;
+}
+/*太阳光芒*/
+#D4_1 {
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+  position: absolute;
+}
+#D4_1 > img {
+  width: 100%;
+  height: 100%;
+  animation: G 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+/*雨*/
+#D5_1 {
+  width: 90%;
+  height: 70%;
+  z-index: 10;
+  position: absolute;
+  left: 10%;
+  overflow: hidden;
+  background: url(imgs/Yu.png);
+  background-size: 100% 100%;
+  display: none;
+}
+#D5_2 {
+  width: 90%;
+  height: 70%;
+  z-index: 10;
+  position: absolute;
+  left: 10%;
+  overflow: hidden;
+  background: url(imgs/Yu.png);
+  background-size: 100% 100%;
+  background-position: -20px -20px;
+  display: none;
+}
+.show {
+  display: block;
+  z-index: 1000;
+}
+/*第六页文字、飞机*/
+#D6_1{
+    width: 100%;
+  z-index: 10;
+  position: absolute;
+    animation: toumingdu 5s forwards;
+    animation-play-state: paused;
+}
+#D6_1>img{
+    width: 100%;
+    height: 100%;
+}
+@keyframes toumingdu{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#D6_2{
+    width: 15%;
+    z-index: 10;
+    position: absolute;
+}
+#D6_2>img{
+    width: 100%;
+    height: 100%;
+    animation: Feiji 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+@keyframes Feiji{
+      from{
+        transform: translate(0%,0%);
+    }
+    to{
+        transform: translate(550%,700%);
+    }
+}
+    /*第七页头像*/
+    #D7_1{
+    width: 30%;
+  z-index: 10;
+  position: absolute;
+}
+#D7_1>img{
+    width: 100%;
+    height: 100%;
+    animation: huiyi 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+@keyframes huiyi{
+    from{
+        opacity: 0;
+        transform: translate(-30%,0%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0%,0%);
+    }
+}
+/*结尾飞机*/
+#D8_1{
+    width: 10%;
+    z-index: 20;
+    position: absolute;
+}
+#D8_1>img{
+    width: 100%;
+    height: 100%;
+    animation: Feiji_2 8s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+@keyframes Feiji_2{
+    from{
+        transform: translate(0%,0%);
+    }
+    to{
+        transform: translate(550%,700%);
+    }
+}
+/*刷新页面*/
+#shuaxin{
+    width: 40%;
+    z-index: 20;
+    position: absolute;
+}
+#shuaxin > img{
+    width: 100%;
+    height: 100%;
+    animation: toumingdu 3s forwards;
+    animation-play-state: paused;
+}
