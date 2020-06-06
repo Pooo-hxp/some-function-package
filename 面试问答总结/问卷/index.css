@@ -7,18 +7,23 @@
 .par>textarea {
     padding: 10px;
 }
-#question{
+
+#question {
     margin-bottom: 10px;
 }
+
 #question :nth-child(2) {
     background: rgb(248, 227, 237);
 }
+
 #question :nth-child(3) {
     background: rgb(233, 198, 231);
 }
+
 #question :nth-child(4) {
     background: rgb(199, 157, 177);
 }
+
 .son {
     margin: auto;
     padding: 20px;
@@ -35,13 +40,16 @@
     font-weight: 400;
     border-radius: 4px;
 }
-.submit{
+
+.submit {
     margin: 0 70%;
 }
-table{
+
+table {
     border-collapse: collapse;
 }
-.list>p{
+
+.list>p {
     border: 1px solid skyblue;
     text-align: center;
     background: green;

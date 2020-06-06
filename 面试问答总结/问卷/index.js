@@ -16,9 +16,9 @@ let checkPrice = document.getElementById('price');
 let checkSel = document.getElementById('checkSel');
 checkPrice.onkeyup = function () {
     let flag = checkPrice.value
-    if (checkSel.checked == true) 
-        (alert('请取消下方选项再填写'),checkPrice.value = '')
-    else 
+    if (checkSel.checked == true)
+        (alert('请取消下方选项再填写'), checkPrice.value = '')
+    else
         flag.search(testNum) != -1 && flag > 1 && flag < 99999 ? console.log('正常') : alert('输入不规范或超出范围')
 }
 function checkBox(check) {
