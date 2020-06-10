@@ -1,7 +1,10 @@
-let regChar = '^[A-Za-z\u4e00-\u9fa5/\s]+$'
-//中英文校验
+let regChar = '^[A-Za-z\u4e00-\u9fa5/\s]+$'//中英文校验
+let regNum = '^[0-9]*$'//数字价格校验
 let testChar = new RegExp(regChar);
+let testNum = new RegExp(regNum);
 let parent = document.getElementById('question');
+let checkPrice = document.getElementById('price');
+let checkSel = document.getElementById('checkSel');
 parent.addEventListener('input', function () {
     var arr = document.getElementsByClassName('questionVal');
     for (const key in arr) {
@@ -9,12 +12,7 @@ parent.addEventListener('input', function () {
             arr[key].value.search(testChar) == -1 ? alert('当前输入不规范') : console.log('正常');
     }
 })
-let regNum = '^[0-9]*$'
-//数字价格校验
-let testNum = new RegExp(regNum);
-let checkPrice = document.getElementById('price');
-let checkSel = document.getElementById('checkSel');
-checkPrice.onkeyup = function () {
+checkPrice.onkeyup = () => {
     let flag = checkPrice.value
     if (checkSel.checked == true)
         (alert('请取消下方选项再填写'), checkPrice.value = '')
@@ -22,7 +20,6 @@ checkPrice.onkeyup = function () {
         flag.search(testNum) != -1 && flag > 1 && flag < 99999 ? console.log('正常') : alert('输入不规范或超出范围')
 }
 function checkBox(check) {
-    console.log(checkPrice.value);
     if (check.checked == true)
         checkPrice.value == '' ? console.log('选取正常') : (check.checked = false, alert('已填价格，无法选中'))
 }
