@@ -33,7 +33,6 @@ function drop(ev) {
     ev.preventDefault();
     while (ev.target.hasChildNodes()) //当div下存在子节点时，删除替换
     {
-        console.log(ev.target);
         if (ev.target.firstChild.id.toString().indexOf('dpi') != -1)
             document.getElementById('dpi').appendChild(ev.target.firstChild)
         else
