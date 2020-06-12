@@ -33,11 +33,6 @@
     }());
 ```
 ##### 什么是闭包？为什么使用闭包，使用闭包的好处是什么？
-```javascript 
-/*待补充*/
-```
-##### javascript种call和cpply的区别是什么，指向问题？
-```javascript 
-```
-
-    
+```html 
+<a href='https://www.xipengheng.cn/?p=331'>点击文章</a>
+```    
