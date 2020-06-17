@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>圣杯布局</title>
+    <title>双飞翼布局</title>
 </head>
+<style>
+    /* 主体标准写法，超出隐藏 */
+    body{
+        height: 100%;
+        overflow: hidden;
+    }
+    .container{
+        position: relative;
+        height: 100%;
+    }
+    .left,
+    .right{
+        /* 相对于父元素定位，为0时对齐 */
+        position: absolute;
+        top: 0;
+        width: 200px;
+        min-height: 200px;
+        background: pink;
+    }
+    .left{
+        left: 0;
+    }
+    .right{
+        right: 0;
+    }
+    .conter{
+        /* 中间容器左右空出二百 */
+        margin: 0 200px;
+        min-height: 400px;
+        background: skyblue;
+    }
+</style>
 <body>
     <div class="container">
         <div class="conter"> </div>
