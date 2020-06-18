@@ -22,6 +22,29 @@
         x: 10,
         y: 20
     }]
+    //深拷贝
+    console.log(JSON.parse(JSON.stringify(arr)));
+    /**
+     * 实现一个拷贝方法（浅拷贝）
+     * （也就是说只循环了第一个层级）
+     * 通过赋值新对象操作，避免更改a时b也会改变
+     * */
+    function copyobj(o){
+        let newobj={};
+        for (let key in o) {
+            newobj[key]=o[key];
+        }
+        return newobj
+    }
+    var a={name:'我是A的值'}
+    var b=copyobj(a);//调用原生的浅拷贝函数
+    var c=Object.assign({},a)//同样也是浅拷贝，把对象a赋值给一个空对象{}
+    var d=JSON.parse(JSON.stringify(a));
+    //深拷贝，利用JSON，stringify先转化为字符串，parse再转化为对象
+    /**
+     * 这里要注意一个问题，深拷贝是无法拷贝函数的
+     * 如果拷贝的对象中包含函数方法，那么会被丢弃掉
+    */
 </script>
 
 </html>
