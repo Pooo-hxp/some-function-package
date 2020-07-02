@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象深浅克隆</title>
+</head>
+
+<body>
+    <input type="text" id="flag">
+    <input type="text" id="type"><button id="check" onclick="checkFun()">规划</button>
+</body>
+<script>
+/**
+ * 先获取物品单，字符串转数组
+ * 数组排序，以低到高
+ * 从低到高单价相加检验是否超预算
+ * 输出预算内物品及应付总额
+*/
+    function checkFun() {
+        let flag = document.getElementById('flag').value; //预算
+        let arrs = document.getElementById('type').value.split(' '); //物品单
+        let parSum = 0; //总额初始值
+        let showList = []; //初始购买清单
+        let sortArrs = quick(arrs) //物品单价格排序后
+        for (let j = 0; j < sortArrs.length; j++) {
+            //检验新加一个物品是否超预算
+            parSum += sortArrs[j] * 1;
+            if (parSum <= flag)
+                showList.push(sortArrs[j])
+        }
+        console.log('最多可购买的清单', showList);
+        console.log('最终所付总额', parSum);
+    }
+    // 先对物品价格进行低到高排序
+    function quick(arr) {
+        if (arr.length <= 1) {
+            return arr;
+        }
+        let flag = Math.floor(arr.length / 2)
+        let key = arr.splice(flag, 1)[0];
+        let arrLeft = [];
+        let arrRight = [];
+        for (let i = 0; i < arr.length; i++) {
+            let item = arr[i];
+            item * 1 > key * 1 ? arrRight.push(item) : arrLeft.push(item)
+        }
+        return quick(arrLeft).concat(key, quick(arrRight));
+    }
+</script>
+
+</html>
