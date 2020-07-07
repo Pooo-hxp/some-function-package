@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机打乱数组</title>
+</head>
+
+<body>
+    555
+</body>
+<script>
+    /**
+     * 数组扁平化
+     */
+    let arr = [
+        [1, 2, 2],
+        [3, 4, 5, 5],
+        [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10
+    ]
+    console.log("原始数组",arr);
+    // 1、ES6方法（部分浏览器不支持）
+    let arr1 = arr;
+    arr1 = arr1.flat(2); //后面的数字为展开几级
+    arr1 = arr1.flat(Infinity); //这里是全部展开
+    console.log('使用ES6的flat', arr1);
+    // 2、利用toString
+    let arr2 = arr;
+    arr2 = arr2.toString().split(',') //此时虽然展开并且成为数字，但值变成了字符串了
+    arr2 = arr2.map(
+        item =>
+        parseFloat(item))
+    console.log("使用toString", arr2);
+    // 3、手写递归循环遍历函数
+    let arr3 = arr;
+    function myFlat() {
+        let result = [];
+        let that = this;
+        let fn = (arr) => {
+            for (let i = 0; i < arr.length; i++) {
+                let item = arr[i];
+                if (Array.isArray(item)) {
+                    fn(item);
+                    continue;
+                }
+                result.push(item);
+            }
+        }
+        fn(that);
+        return result;
+    }
+    Array.prototype.myFlat = myFlat;
+    arr3 = arr3.myFlat();
+    console.log('自定义函数', arr3);
+</script>
+
+</html>
