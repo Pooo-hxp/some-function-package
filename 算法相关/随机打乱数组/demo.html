@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    555
 </body>
 <script>
     /**
@@ -18,9 +17,7 @@
     function method1(arr) {
         for (var i = 0, len = arr.length; i < len; i++) {
             var a = parseInt(Math.random() * len);
-            var temp = arr[a];
-            arr[a] = arr[i];
-            arr[i] = temp;
+            [arr[a],arr[i]]=[arr[i],arr[a]]
         }
         return arr;
     }
