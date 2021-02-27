@@ -7,16 +7,19 @@ const Bar = {
     computed: {
         username() {
             console.log('this.$router', this.$route)
-            return this.$route.params.username
+            return this.$route.query.username
         }
 
     },
     methods: {
         goBack() {
-            window.history.length > 1 ? this.$route.go(-1) : this.$route.push('/')
+            window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
         }
     },
-    template: '<div>bar</div>'
+    template: `<div>
+    <span>username--{{username}}</span>
+    <button @click='goBack'>clickMe</button>
+    </div>`
 }
 
 // 2. 定义路由
