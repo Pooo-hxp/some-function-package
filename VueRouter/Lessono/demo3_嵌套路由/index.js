@@ -3,8 +3,8 @@ const User = {
     <div>
        <h2> User</h2>
        <div>
-        <router-link to='/user/0609'>User0609</router-link>
-        <router-link to='/user/0204'>User0204</router-link>
+        <router-link to='/user/0609'>0609</router-link>
+        <router-link to='/user/0204'>0204</router-link>
         </div>
         <router-view></router-view>
     </div>
