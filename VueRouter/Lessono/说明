@@ -38,3 +38,6 @@ router.push({ path: 'register', query: { plan: 'private' }})
 则必须在路由中注册name ---- { name:'setting', path: '/setting/:id', component: Setting },
 ----------------------------
 Vue Router 的导航方法 (push、 replace、 go) 在各类路由模式 (history、 hash 和 abstract) 下表现一致
+this.$router.push() 跳转到不同的url，但这个方法会向history栈添加一个记录，点击后退会返回到上一个页面。
+this.$router.replace()  同样是跳转到指定的url，但是这个方法不会向history里面添加新的记录，点击返回，会跳转到上上一个页面。上一个记录是不存在的。
+this.$router.go(n) 相对于当前页面向前或向后跳转多少个页面,类似 window.history.go(n)。n可为正数可为负数。正数返回上一个页面
