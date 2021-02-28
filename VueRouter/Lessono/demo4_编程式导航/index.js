@@ -5,55 +5,33 @@ const Home = {
     </div>
     `
 }
-const UserDetail = {
+const Category = {
     template: `
     <div>
-        <h3> this is UserDetail {{$route.params.id}} </h3>
-        <router-link to='profile'>Profile</router-link>
-        <router-link to='post'>Post</router-link>
-        <router-view></router-view>
+        <h3> this is Category </h3>
     </div>
     `
 }
-const UserProfile = {
+const Shopcart = {
     template: `
     <div>
-        <h4> This is UserProfile </h4>
-        <router-view></router-view>
+        <h4> This is Shopcart </h4>
     </div>
     `
 }
-const UserPosts = {
+const Setting = {
     template: `
     <div>
-         <h4> This is UserPosts </h4>
-        <router-view></router-view>
+         <h4> This is Setting </h4>
     </div>
     `
 }
 const router = new VueRouter({
     routes: [
-        {
-            path: '/',
-            component: Home,
-            // children: [
-            //     {
-            //         path: ':id',
-            //         component: UserDetail,
-            //         //-配置子路由
-            //         children: [
-            //             {
-            //                 path: 'profile',
-            //                 component: UserProfile,
-            //             },
-            //             {
-            //                 path: 'post',
-            //                 component: UserPosts,
-            //             },
-            //         ]
-            //     }
-            // ]
-        },
+        {path: '/',component: Home},
+        {path: '/category',component: Category},
+        {path: '/shopcart',component: Shopcart},
+        {path: '/setting',component: Setting},
 
     ]
 })
