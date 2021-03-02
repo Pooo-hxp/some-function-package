@@ -1,4 +1,13 @@
-
+const Menu = {
+    template: `
+    <div>
+       <h2> Menu</h2>
+       <router-link to='/Home'> </router-link>
+       <router-link to='/Products'> </router-link>
+       <router-link to='/About'> </router-link>
+    </div>
+    `
+}
 const Home = {
     template: `
     <div>
@@ -22,9 +31,9 @@ const About = {
 }
 const router = new VueRouter({
     routes: [
-        { path: '/', component: Home,  },
-        { path: '/Products', component: Products},
-        { path: '/About', component: About},
+        { path: '/', component: Home, },
+        { path: '/Products', component: Products },
+        { path: '/About', component: About },
     ]
 })
 new Vue({
