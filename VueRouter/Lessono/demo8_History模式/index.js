@@ -29,6 +29,7 @@ const About = {
     `
 }
 const router = new VueRouter({
+    mode:'history',
     routes: [
         { path: '/', components: {
             default:Home,
