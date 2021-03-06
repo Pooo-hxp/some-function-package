@@ -4,10 +4,14 @@
       <div class="container">
         <ul class="nav_left">
           <li>
-            <router-link></router-link>
+            <router-link to="/">Home</router-link>
           </li>
-          <li>Admin</li>
-          <li>Cart</li>
+          <li>
+            <router-link to="/Admin">Admin</router-link>
+          </li>
+          <li>
+            <router-link to="/Cart">Cart</router-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -29,5 +33,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+li{
+  list-style: none;
 }
 </style>
