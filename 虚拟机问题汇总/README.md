@@ -14,5 +14,28 @@
    - 系统提示会提示试用期30天或永久激活，激活密钥自行baidu获取
    ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/016b7a1134004d3eafcbb49ed63d2e1e~tplv-k3u1fbpfcp-watermark.image)
 ### `VM ware`新建虚拟机
-   - Ctrl+N 或者点击新建虚拟机
+   - 注：*需要提前下载系统镜像文件*
+   -   👉 三击复制下方连接，直接 🛩下载 **Win 10** 系统镜像 
+   ```javascript
+ed2k://|file|cn_windows_10_business_editions_version_1909_updated_dec_2019_x64_dvd_262ac8af.iso|5301471232|FD9D7DD90D16FA14A682AEF49F8E712B|/
+   ```
+   - 如果想下载**win7 8 , XP , Linux**等，👉[点击](https://msdn.itellyou.cn/) 选择适合自己的
+   
+![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bed239599c4946e7a1029903998a7505~tplv-k3u1fbpfcp-watermark.image)
+   - **Ctrl+N 或者点击新建虚拟机,进行虚拟机创建**
+   
+   ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3a8ef7eb3aae4428a72a52302f4f75ed~tplv-k3u1fbpfcp-watermark.image)
+   
+   -  **选择映像文件iso,文件目录选择提前下载好的系统镜像文件**
+    
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f19f8821014049fc80b528dc2f144c00~tplv-k3u1fbpfcp-watermark.image)
 
+ - 进行操作系统秘钥激活，可自己通过网络获取
+ 
+    ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/55aa0a2310f24dd88b39421dca25263e~tplv-k3u1fbpfcp-watermark.image)
+ - 输入秘钥激活后，进行存储路径配置
+ 
+    ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bd1e0581925c472090f3ede98dee62d4~tplv-k3u1fbpfcp-watermark.image)
+  - 然后进行虚拟机磁盘分配（逻辑空间，根据实际大小占用本地磁盘）
+  
+    ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe280c64eca9417c88aee4d4bc96281d~tplv-k3u1fbpfcp-watermark.image)
