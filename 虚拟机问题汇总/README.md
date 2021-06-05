@@ -43,7 +43,7 @@ ed2k://|file|cn_windows_10_business_editions_version_1909_updated_dec_2019_x64_d
   
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/370ea68d4bba46f79a5040e1e46ee6d3~tplv-k3u1fbpfcp-watermark.image)
 > 然后自动开启虚拟机
-## 虚拟机的使用
+## 虚拟机的使用中问题解决
 ### `VM ware`中系统安装    
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51a947d678bc4128aed6593b7e26cd34~tplv-k3u1fbpfcp-watermark.image)
 ### `VM ware`中虚拟机：蓝屏
@@ -59,3 +59,15 @@ ed2k://|file|cn_windows_10_business_editions_version_1909_updated_dec_2019_x64_d
 ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e0964ee93f91447ca61467665f2f87b3~tplv-k3u1fbpfcp-watermark.image)
 > 解决方案：虚拟机右下角，左往右第三个软盘项，右键断开连接即可
 ### `VM ware`虚拟机：本地文件与虚拟机文件无法相互拷贝
+   - 虚拟机VMware Tools 为灰色，无法安装
+ 
+![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/69f70d4b60884534a2a13e7cfc6deef7~tplv-k3u1fbpfcp-watermark.image)
+   > 解决方案1：设置 **CD/DVD、CD/DVD2、软盘** 为自动检测
+    
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c21fcdd001314f05af7577c6270efd2c~tplv-k3u1fbpfcp-watermark.image)
+  > 解决方案2：设置 **CD/DVD**连接为ISO映像文件
+   - 重启虚拟机，此时打开我的电脑中，会出现VMware Tools文件,点击安装
+  
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e2789e3afc98457ebc503de7d892ed19~tplv-k3u1fbpfcp-watermark.image)
+
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/df075218ea4a49ebb9e42d1da440b5b4~tplv-k3u1fbpfcp-watermark.image)
