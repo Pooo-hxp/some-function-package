@@ -39,3 +39,12 @@ ed2k://|file|cn_windows_10_business_editions_version_1909_updated_dec_2019_x64_d
   - 然后进行虚拟机磁盘分配（逻辑空间，根据实际大小占用本地磁盘）
   
     ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe280c64eca9417c88aee4d4bc96281d~tplv-k3u1fbpfcp-watermark.image)
+  - 再根据自己电脑硬件情况，对虚拟机内存及处理器进行分配
+  
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/370ea68d4bba46f79a5040e1e46ee6d3~tplv-k3u1fbpfcp-watermark.image)
+> 然后自动开启虚拟机
+## 虚拟机的使用
+### `VM ware`中系统安装    
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51a947d678bc4128aed6593b7e26cd34~tplv-k3u1fbpfcp-watermark.image)
+### `VM ware`中虚拟机蓝屏
+   - 如果首次进入是boot manager界面，如下图所示
