@@ -46,5 +46,16 @@ ed2k://|file|cn_windows_10_business_editions_version_1909_updated_dec_2019_x64_d
 ## 虚拟机的使用
 ### `VM ware`中系统安装    
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51a947d678bc4128aed6593b7e26cd34~tplv-k3u1fbpfcp-watermark.image)
-### `VM ware`中虚拟机蓝屏
+### `VM ware`中虚拟机：蓝屏
    - 如果首次进入是boot manager界面，如下图所示
+   
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6b1309861e848998cf2047bfcfeb7b0~tplv-k3u1fbpfcp-watermark.image)
+   > 解决方案：虚拟机设置中高级->固件类型->改为BIOS，重启虚拟机
+    
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8614fcc59e594cb69391485e08b1a4d6~tplv-k3u1fbpfcp-watermark.image)
+### `VM ware`虚拟机：无人参与应答文件包含的产品秘钥无效
+   - 如果出现秘钥无效导致无法进入系统的问题
+    
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e0964ee93f91447ca61467665f2f87b3~tplv-k3u1fbpfcp-watermark.image)
+> 解决方案：虚拟机右下角，左往右第三个软盘项，右键断开连接即可
+### `VM ware`虚拟机：本地文件与虚拟机文件无法相互拷贝
