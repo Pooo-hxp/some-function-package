@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上传文件</title>
+  <title>获取上传文件内容</title>
 </head>
 <style>
   * {
@@ -14,34 +14,51 @@
 
   #fileTxt {
     height: 400px;
-    width: 300px;
+    width: 500px;
     color: gray;
     overflow: auto;
     padding-top: 5px;
     border-radius: 5px;
     border: 1px solid skyblue;
   }
+
+  #fileId {
+    height: 50px;
+    margin-bottom: 5px;
+  }
 </style>
-<div>
-  上传文件 ： <input type="file" name="file" id="fileId" onchange="read(event)" />
-</div><br>
-<p>文本内容</p>
-<textarea id="fileTxt">
+
+<body>
+  <div>
+    上传文件 ： <input type="file" name="file" id="fileId" onchange="read(event)" />
+  </div>
+  <div>
+    文件路径： <input type="input" id='URL' placeholder="请输入需读取的文件路径" id="" /> <button onclick="getTxt()">获取</button>
+  </div>
+  <p>文本内容</p>
+  <textarea id="fileTxt">
   显示文本内容
 </textarea>
+</body>
+
 <script>
   /**
  * ActiveXObject对象只支持IE浏览器
- * 获取.ini文件里的参数配置
- * 假如文件内容为 axxb=12;
- * 则下方为获取方式
  */
-var getTxt=new ActiveXObject("Scripting.FileSystemObject");
-var file=getTxt.OpenTextFile("C:/eastcom///////",1);//文件路径
-var fileArray=file.ReadAll().split('');
-var flag=fileArray.indexOf('=');
-var keyType=fileArray[flag+1]
-//----------------------------------
+  function getTxt() {
+    if (window.ActiveXObject || "ActiveXObject" in window) {
+      return true;
+    } else {
+      alert('该浏览器不支持ActiveXObject')
+      return false;
+    }
+    var ActiObj = new ActiveXObject("Scripting.FileSystemObject");
+    var url = document.getElementById('URL').value;
+    var file = ActiObj.OpenTextFile(url, 1);//文件路径
+    var txt = file.ReadAll();
+    document.getElementById('fileTxt').innerHTML = txt;
+  }
+  //----------------------------------
   function read() {
     /**
      * new FileReader() 实例
