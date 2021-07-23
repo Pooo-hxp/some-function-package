@@ -1,0 +1,52 @@
+<html>
+
+<head>
+   <script src="https://cdn.bootcdn.net/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+   <script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+
+<body>
+   <span>选择文件:</span><input type="file" id="fileID" /><hr>
+   <button onclick="readZip()">解压选择的文件并展示</button><br><br>
+   <textarea id="fileTxt">  显示文本内容  </textarea>
+</body>
+      <script>
+         function readZip() {
+            var file = document.getElementById("fileID");
+            const zipFile = file.files[0]
+            const jszip = new JSZip()
+            var dataList=[];
+            jszip.loadAsync(zipFile).then((zip) => { // 读取zip
+               for (let key in zip.files) { // 循环判定是否有层级
+                  if (!zip.files[key].dir) {
+                     /**
+                      * 可以在层级中检测自己想要的文本类型
+                      * 替换即可：如 docx  jpg png pdf 等
+                     */
+                     if (/\.(txt)$/.test(zip.files[key].name)) { 
+                        var  base = zip.file(zip.files[key].name).async('string') 
+                        // uint8array base64 string
+                        // 可以选择想要的类型输出，比如解图用base64，文本string等
+                        base.then(res => {
+                           dataList.push({
+                              fileName: zip.files[key].name,
+                              type: 'text',
+                              content: res
+                           });
+                           //使用dataList 利用  zip.file()生成新文件也可以
+                           document.getElementById('fileTxt').innerHTML = res;
+                        })
+                        zip.generateAsync({
+                        type: "blob",
+                        compression: "STORE", 
+                     }).then(function (content) {
+                        saveAs(content, 'unzip.txt');
+                     });
+                     }
+                  }
+               }
+            })
+         }
+      </script>
+
+</html>
