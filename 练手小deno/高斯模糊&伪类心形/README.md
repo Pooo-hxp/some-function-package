@@ -62,10 +62,10 @@
        - 全系不支持 IE 及 Edge
        
 ###  伪元素及伪类的运用
-   #### 单纯利用CSS画出一个心，实现过程轨迹如下图
+   #### 单纯利用CSS画出一个心，实现过程的轨迹如下图
    ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b51c207e7e58496ab47b3aedd9fdc953~tplv-k3u1fbpfcp-zoom-1.image)
-   #### 实现步骤
-   - 首先是固定个`div`设置其宽高及背景色并利用```relative```定位
+   #### 实现的步骤
+   - 首先是固定个容器的宽高及背景色并进行```relative```定位
    ```html
   .heart {
         width: 30px;
@@ -75,8 +75,8 @@
     }
     <div class="heart"></div>
 ```
-- 然后利用伪类元素```:after```和```:before```利用```inherit```继承父类属性值
-- 注意：要位移主元素的一般，似的伪类都能‘内嵌’入主元素
+- 然后利用伪类元素```:after```和```:before```，使用```inherit```继承父类属性值
+- 注意：要位移正方形主元素的一半，使的伪类都能‘内嵌’入主元素
  ```css
   .heart:after,
   .heart:before {
@@ -89,29 +89,27 @@
  .heart:after { top: -15px; }
 .heart:before { left: -15px; }
  ```
-   - 此时的形态
+   - 此时它的形态
   ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/192368ca1fbd40cbbf886170011071cc~tplv-k3u1fbpfcp-zoom-1.image)
-  - 然后在伪类元素身上利用 `border-radius: 50%`创造出两个半圆
+  - 然后是边框圆角，在伪类元素身上利用 `border-radius: 50%`创造出两个半圆
   ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22736985a6d04d0a8626e847521eb221~tplv-k3u1fbpfcp-zoom-1.image)
- - 此时图像是有了，就是姿势有点歪（两个伪类元素先用不同的颜色，方便观察变化）
+ - 此时图像是有了，就是方向是有点歪（两个伪类元素先用不同的颜色，方便观察变化）
  - 最后利用`transform`旋转后改为同一色系就大功告成啦！
  ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/036b09cc42f14538acc8d85f0853285e~tplv-k3u1fbpfcp-zoom-1.image)
  #### 完整示例代码，快去粘贴过去自己看看效果吧
  ```css
- <body>
-    <div class="heart"> </div>
-</body>
-      .heart {
-        width: 30px;
-        height: 30px;
-        top: 50px;
-        left: 50px;
-        background: red;
-        position: relative;
-        transform: rotate(45deg);
-        /*兼容浏览器*/
-        /* -webkit-transform: rotate(45deg); */
-        /* -moz-transform: rotate(45deg); */
+<style>
+  .heart {
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    left: 50px;
+    background: red;
+    position: relative;
+    transform: rotate(45deg);
+    /*兼容浏览器*/
+    /* -webkit-transform: rotate(45deg); */
+    /* -moz-transform: rotate(45deg); */
     }
     .heart:after,
     .heart:before {
@@ -126,4 +124,8 @@
     }
     .heart:after { top: -15px; }
     .heart:before { left: -15px;}
+ </style>
+  <body>
+    <div class="heart"> </div>
+  </body>
  ```
